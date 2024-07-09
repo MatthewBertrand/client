@@ -1,0 +1,124 @@
+body 
+{
+    font-family: Arial, sans-serif;
+}
+  
+h1, h2 
+{
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.container 
+{
+    padding: 16px;
+}
+  
+.header 
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+  
+.headerLine 
+{
+    border: none;
+    border-top: 2px solid black;
+    margin: 1; /* Ensure no additional margin */
+}
+  
+.productHeading 
+{
+    margin: 15px 0;
+}
+  
+.controls
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+  
+.sortContainer 
+{
+    margin-right: 15px; /* Adjust spacing between sort and toggle if necessary */
+}
+  
+.form-check
+{
+    margin: 0 15px; /* Adjust margin between toggle and registration form */
+}
+  
+.productGrid 
+{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+  
+.productContainer 
+{
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 16px;
+    text-align: center;
+}
+  
+.productDetails 
+{
+    margin-top: 8px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif, sans-serif;
+}
+  
+.product-image img 
+{
+    max-width: 100%;
+    height: auto;
+}
+  
+.deal 
+{
+    color: red;
+    font-weight: bold;
+}
+  
+.registrationSection 
+{
+    text-align: center;
+    margin-left: auto;
+}
+  
+.registrationSection form 
+{
+    display: flex;
+    align-items: center;
+}
+  
+.registrationSection input[type="email"] 
+{
+    padding: 5px 10px;
+    font-size: 14px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+  
+.registrationSection button 
+{
+    padding: 5px 10px;
+    font-size: 14px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+  
+.registrationSection button:hover 
+{
+    background-color: #0056b3;
+}
+  

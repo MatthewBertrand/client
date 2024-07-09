@@ -1,0 +1,53 @@
+<div class="container">
+    <h1>Admin Portal - Add Product</h1>
+    <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+      <div>
+        <label for="productName">Product Name</label>
+        <input id="productName" formControlName="productName" required>
+      </div>
+      <div>
+        <label for="productImage">Product Image URL</label>
+        <input id="productImage" formControlName="productImage" required>
+      </div>
+      <div>
+        <label for="productSummary">Product Summary</label>
+        <input id="productSummary" formControlName="productSummary" required>
+      </div>
+      <div>
+        <label for="productDescription">Product Description</label>
+        <input id="productDescription" formControlName="productDescription" required>
+      </div>
+      <div>
+        <label for="price">Price</label>
+        <input id="price" type="number" formControlName="price" required>
+      </div>
+      <div>
+        <label for="isLive">Is Live</label>
+        <input id="isLive" type="checkbox" formControlName="isLive">
+      </div>
+      <div>
+        <label for="availability">Availability</label>
+        <input id="availability" type="number" formControlName="availability" required>
+      </div>
+      <div>
+        <label for="warranty">Warranty</label>
+        <input id="warranty" formControlName="warranty">
+      </div>
+      <div>
+        <label for="categoryID">Category ID</label>
+        <input id="categoryID" type="number" formControlName="categoryID" required>
+      </div>
+      <button type="submit">Add Product</button>
+    </form>
+  
+    <h2>Inventory</h2>
+    <ul>
+      <li *ngFor="let item of inventory">
+        {{ item.productName }} - ${{ item.price }}
+        <button (click)="toggleProductStatus(item)">
+          {{ item.isLive ? 'Make Offline' : 'Make Live' }}
+        </button>
+      </li>
+    </ul>
+  </div>
+  

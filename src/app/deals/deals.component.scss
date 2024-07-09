@@ -1,0 +1,71 @@
+.container
+{
+    padding: 16px;
+    //border-bottom: 2px solid black;
+}
+
+.header 
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.headerLine 
+{
+    border: none;
+    border-top: 2px solid black;
+    margin: 0; /* Ensure no additional margin */
+}
+
+.productHeading
+{
+    margin: 15px 0;
+    //border-bottom: 2px solid black;
+}
+
+.controls 
+{
+    display: flex;
+    align-items: center;
+}
+
+.sortContainer 
+{
+    margin-right: 15px; /* Adjust spacing between sort and toggle if necessary */
+}
+
+.form-check 
+{
+    margin: 0;
+}
+  
+
+.productGrid 
+{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+
+.productContainer 
+{
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-top: 15px;
+    padding: 16px;
+    text-align: center;
+}
+  
+.productDetails 
+{
+    margin-top: 8px;
+}
+
+.product-image img 
+{
+    max-width: 100%;
+    height: auto;
+}

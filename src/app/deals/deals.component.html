@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="header">
+      <h1 class="dealHeading">Daily Deals!</h1>
+      <div class="controls">
+        <div class="sortContainer">
+          <select class="form-select mb-3" aria-label="Default select example" (change)="sortInventory($event)">
+            <option value="bestMatch" selected>Best Match</option>
+            <option value="highLow">High to Low</option>
+            <option value="lowHigh">Low to High</option>
+          </select>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" (change)="toggleInStockOnly($event)">
+          <label class="form-check-label" for="flexSwitchCheckDefault">In Stock Only</label>
+        </div>
+      </div>
+    </div>
+  
+    <hr class="headerLine">
+  
+    <div class="productGrid">
+      @for(inventoryRow of filteredInventory; track trackByProductID)
+      {
+        <div class="productContainer">
+          <div class="product-image">
+            <img src="{{inventoryRow.productImage}}" alt="{{inventoryRow.productName}}">
+          </div>
+          <div class="productDetails">
+            <h2>{{ inventoryRow.productName }}</h2>
+            <p>{{ inventoryRow.productSummary }}</p>
+            <p>Price: ${{ inventoryRow.price }}</p>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+  

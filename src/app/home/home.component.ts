@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Inventory } from '../interfaces/inventory';
 import { Deals } from '../interfaces/deals';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-home',
@@ -27,7 +28,7 @@ export class HomeComponent implements OnInit {
   }
 
   fetchInventory(): void {
-    this.http.get<Inventory[]>('http://localhost:4899/inventory').subscribe(inventoryFromNode => {
+    this.http.get<Inventory[]>(environment.server + '/inventory').subscribe(inventoryFromNode => {
       console.log('Fetched inventory:', inventoryFromNode);
       this.inventory = inventoryFromNode;
       this.originalInventory = [...inventoryFromNode];
@@ -39,7 +40,7 @@ export class HomeComponent implements OnInit {
   fetchDeals(): void {
     const today = new Date().toLocaleDateString('en-US', { weekday: 'long' }).toLowerCase();
     console.log(`Fetching deals for today (${today})`);
-    this.http.get<any[]>('http://localhost:4899/deals?dayOfWeek=' + today).subscribe(dealsData => {
+    this.http.get<any[]>(environment.server + '/deals?dayOfWeek=' + today).subscribe(dealsData => {
       console.log('Fetched deals:', dealsData);
       dealsData.forEach(deal => {
         this.deals[deal.productID] = deal.dealAmount;

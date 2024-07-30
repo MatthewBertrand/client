@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Inventory } from '../interfaces/inventory';
 import { Deals } from '../interfaces/deals';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-deals',
@@ -26,7 +27,7 @@ export class DealsComponent implements OnInit {
   }
 
   fetchData(): void {
-    this.http.get<Inventory[]>("http://localhost:4899/inventory").subscribe({
+    this.http.get<Inventory[]>(environment.server + "/inventory").subscribe({
       next: (inventoryData: Inventory[]) => {
         console.log('Inventory Data:', inventoryData);
         this.inventory = inventoryData;
@@ -39,7 +40,7 @@ export class DealsComponent implements OnInit {
   }
 
   fetchDealsData(): void {
-    this.http.get<Deals[]>("http://localhost:4899/deals").subscribe({
+    this.http.get<Deals[]>(environment.server + "/deals").subscribe({
       next: (dealData: Deals[]) => {
         console.log('Deals Data:', dealData);
         this.deals = dealData;
